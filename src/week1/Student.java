@@ -8,22 +8,22 @@ public class Student {
     private String em; 
 
     // TODO: khai báo các phương thức getter, setter cho Student
-    public get_N(){
+    public String get_N(){
         return this.n;
     }
-    public get_Sid(){
+    public String get_Sid(){
         return this.sid;
     }
-    public get_Em(){
+    public String get_Em(){
         return this.em;
     }
-    public set_N(String n){
+    public void set_N(String n){
         this.n = n;
     }
-    public set_Sid(String sid){
+    public void set_Sid(String sid){
         this.sid = sid;
     }
-    public set_Em(String em){
+    public void set_Em(String em){
         this.em = em;
     }
     /**

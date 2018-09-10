@@ -10,14 +10,14 @@ public class StudentManagement {
 
     public boolean sameGroup(Student s1, Student s2) {
         // TODO:
-        return (s1.sid == s2.sid);
+        return (s1.get_Sid() == s2.get_Sid());
     }
 
     void studentsByGroup() {
         // TODO:
         Map<String,List<Student>> student_by_group = new Map<String,List<Student>>();
         for (Student student : students){
-            String key = student.sid;
+            String key = student.get_Sid();
             if (student_by_group.containsKey(key)){
                 List<Student> students_has_same_key = student_by_group.get(key);
                 students_has_same_key.add(student);
