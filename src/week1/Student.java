@@ -5,10 +5,12 @@ public class Student {
     // TODO: khai báo các thuộc tính cho Student
     private String n;
     private String sid;
-    private String em; 
+    private String em;
+    private String gr;
+
 
     // TODO: khai báo các phương thức getter, setter cho Student
-    public String get_N(){
+    public String get_Name(){
         return this.n;
     }
     public String get_Sid(){
@@ -17,7 +19,8 @@ public class Student {
     public String get_Em(){
         return this.em;
     }
-    public void set_N(String n){
+    public String get_Gr(){return this.gr;}
+    public void set_Name(String n){
         this.n = n;
     }
     public void set_Sid(String sid){
@@ -26,6 +29,7 @@ public class Student {
     public void set_Em(String em){
         this.em = em;
     }
+    public  void  set_Gr(String gr) {this.gr = gr; }
     /**
      * Constructor 1
      */
@@ -34,6 +38,7 @@ public class Student {
         this.n  = null;
         this.sid= null;
         this.em = null;
+        this.gr = null;
     }   
 
     /**
@@ -58,13 +63,12 @@ public class Student {
         this.n  = s.n;
         this.sid= s.sid;
         this.em = s.em;
+        this.gr = s.gr;
     }
 
     String getInfo() {
         // TODO:
-        System.out.println("n : " + n);
-        System.out.println("sid : " + sid);
-        System.out.println("em : " + em);
-
+        String result =this.n + " " +this.sid +" " +this.gr + " " + this.em;
+        return  result;
     }
 }

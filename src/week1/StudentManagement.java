@@ -15,7 +15,7 @@ public class StudentManagement {
 
     void studentsByGroup() {
         // TODO:
-        Map<String,List<Student>> student_by_group = new Map<String,List<Student>>();
+        Map<String,List<Student>> student_by_group = new HashMap<String,List<Student>>();
         for (Student student : students){
             String key = student.get_Sid();
             if (student_by_group.containsKey(key)){
@@ -23,7 +23,7 @@ public class StudentManagement {
                 students_has_same_key.add(student);
             }
             else{
-                List<Student> students_has_same_key = new List<Studen>();
+                List<Student> students_has_same_key = new ArrayList<Student>();
                 students_has_same_key.add(student);
                 student_by_group.put(key,students_has_same_key);
             }
@@ -39,6 +39,6 @@ public class StudentManagement {
         // TODO:
         Student s1 = new Student("Hoang Anh Tuan","K61C-CLC","tuan.a.hoang.1998@gmail.com");
         Student s2 = new Student("Hoang Em Tuan","K61C-CLC","tuan.a.hoang.1999@gmail.com");
-        System.out.println(sameGroup(s1,s2));
+
     }
 }
