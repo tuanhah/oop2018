@@ -3,9 +3,18 @@ package week1;
 public class Student {
 
     // TODO: khai báo các thuộc tính cho Student
+    private String n;
+    private String sid;
+    private String em; 
 
     // TODO: khai báo các phương thức getter, setter cho Student
-
+    public getN(){
+        return this.n;
+    }
+    public getSid(){
+        return this.sid;
+    }
+    
     /**
      * Constructor 1
      */
