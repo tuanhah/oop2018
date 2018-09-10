@@ -35,10 +35,10 @@ public class Student {
      */
     Student() {
         // TODO:
-        this.n  = null;
-        this.sid= null;
-        this.em = null;
-        this.gr = null;
+        this.n  = "";
+        this.sid= "";
+        this.em = "";
+        this.gr = "";
     }   
 
     /**
@@ -52,6 +52,7 @@ public class Student {
         this.n  = n;
         this.sid= sid;
         this.em = em;
+        this.gr = "";
     }
 
     /**
