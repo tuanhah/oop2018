@@ -8,19 +8,33 @@ public class Student {
     private String em; 
 
     // TODO: khai báo các phương thức getter, setter cho Student
-    public getN(){
+    public get_N(){
         return this.n;
     }
-    public getSid(){
+    public get_Sid(){
         return this.sid;
     }
-    
+    public get_Em(){
+        return this.em;
+    }
+    public set_N(String n){
+        this.n = n;
+    }
+    public set_Sid(String sid){
+        this.sid = sid;
+    }
+    public set_Em(String em){
+        this.em = em;
+    }
     /**
      * Constructor 1
      */
     Student() {
         // TODO:
-    }
+        this.n  = null;
+        this.sid= null;
+        this.em = null;
+    }   
 
     /**
      * Constructor 2
@@ -30,6 +44,9 @@ public class Student {
      */
     Student(String n, String sid, String em) {
         // TODO:
+        this.n  = n;
+        this.sid= sid;
+        this.em = em;
     }
 
     /**
@@ -38,10 +55,16 @@ public class Student {
      */
     Student(Student s) {
         // TODO:
+        this.n  = s.n;
+        this.sid= s.sid;
+        this.em = s.em;
     }
 
     String getInfo() {
         // TODO:
-        return null; // xóa dòng này sau khi cài đặt
+        System.out.println("n : " + n);
+        System.out.println("sid : " + sid);
+        System.out.println("em : " + em);
+
     }
 }
