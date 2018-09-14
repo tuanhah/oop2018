@@ -67,15 +67,21 @@ public class StudentManagement {
 //        s3.set_Gr("K61C-CLC");
         s3.set_Gr(null);
         StudentManagement sm = new StudentManagement();
-        System.out.println("Test sameGroup :");
-        System.out.println(sm.sameGroup(s1,s2));
-        System.out.println(sm.sameGroup(s2,s3));
-        System.out.println(sm.sameGroup(s3,s1));
         sm.students.add(s1);
         sm.students.add(s2);
         sm.students.add(s3);
         sm.students.add(s4);
         sm.students.add(s5);
+        for (int i = 0 ; i<96;i++) sm.students.add(s5);
+        if (sm.students.size() > 100) {
+            System.out.println("So svien vuot qua 100");
+            return ;
+        }
+        System.out.println("Test sameGroup :");
+        System.out.println(sm.sameGroup(s1,s2));
+        System.out.println(sm.sameGroup(s2,s3));
+        System.out.println(sm.sameGroup(s3,s1));
+
         System.out.println("Test student by group :");
         sm.studentsByGroup();
         System.out.println("Test remove: ");
