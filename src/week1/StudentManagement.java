@@ -3,10 +3,12 @@ package week1;
 import java.util.*;
 
 
+
 public class StudentManagement {
 
     // TODO: khai báo thuộc tính students là array chứa các đối tượng thuộc lớp Student (max. 100)
-    List<Student> students  = new ArrayList<Student>();
+    Student[] students  = new Student[100];
+    public int cout = 0;
 
     public boolean sameGroup(Student s1, Student s2) {
         // TODO:
@@ -16,17 +18,19 @@ public class StudentManagement {
     void studentsByGroup() {
         // TODO:
         Map<String,List<Student>> student_by_group = new HashMap<String,List<Student>>();
-        for (Student student : students){
-            String key = student.get_Gr();
-            if (student_by_group.containsKey(key)){
-                List<Student> students_has_same_key = student_by_group.get(key);
-                students_has_same_key.add(student);
+        for (Student student : students) {
+            if (student.get_Sid() != "000") {
+                String key = student.get_Gr();
+                if (student_by_group.containsKey(key)) {
+                    List<Student> students_has_same_key = student_by_group.get(key);
+                    students_has_same_key.add(student);
+                } else {
+                    List<Student> students_has_same_key = new ArrayList<Student>();
+                    students_has_same_key.add(student);
+                    student_by_group.put(key, students_has_same_key);
+                }
             }
-            else{
-                List<Student> students_has_same_key = new ArrayList<Student>();
-                students_has_same_key.add(student);
-                student_by_group.put(key,students_has_same_key);
-            }
+            else break;
         }
         Set<String> list_key = new HashSet<String>();
         list_key = student_by_group.keySet();
@@ -45,13 +49,14 @@ public class StudentManagement {
 
     void removeStudent(String id) {
         // TODO:
-        if (students.isEmpty()) return;
-        for (Student st : students){
-            if (st.get_Sid() == id) {
-                students.remove(st);
-                break;
+        List<Student> result= new ArrayList<Student>();
+        for (int i = 0 ; i < cout; i ++ ){
+            if (students[i].get_Sid() != id) {
+                result.add(students[i]);
             }
         }
+        students = result.toArray(students);
+        cout--;
 
     }
 
@@ -67,16 +72,22 @@ public class StudentManagement {
 //        s3.set_Gr("K61C-CLC");
         s3.set_Gr(null);
         StudentManagement sm = new StudentManagement();
-        sm.students.add(s1);
-        sm.students.add(s2);
-        sm.students.add(s3);
-        sm.students.add(s4);
-        sm.students.add(s5);
-        for (int i = 0 ; i<96;i++) sm.students.add(s5);
-        if (sm.students.size() > 100) {
-            System.out.println("So svien vuot qua 100");
-            return ;
-        }
+        sm.students[0] = s1;
+        sm.cout ++;
+        sm.students[1] = s2;
+        sm.cout ++;
+        sm.students[2] = s3;
+        sm.cout ++;
+        sm.students[3] =s4;
+        sm.cout ++;
+        sm.students[4]=s5;
+        sm.cout ++;
+//        for (int i = 0 ; i<96;i++) sm.students.add(s5);
+
+//        if (sm.students.size() > 100) {
+//            System.out.println("So svien vuot qua 100");
+//            return ;
+//        }
         System.out.println("Test sameGroup :");
         System.out.println(sm.sameGroup(s1,s2));
         System.out.println(sm.sameGroup(s2,s3));
@@ -86,8 +97,9 @@ public class StudentManagement {
         sm.studentsByGroup();
         System.out.println("Test remove: ");
         sm.removeStudent("16021210");
-        for (Student st : sm.students){
-            System.out.println(st.getInfo());
+        for (int i = 0 ; i < sm.cout; i ++){
+            System.out.println(sm.students[i].getInfo());
+//            System.out.println(sm.students[i]);
         }
     }
 }
