@@ -12,14 +12,14 @@ public class StudentManagement {
 
     public boolean sameGroup(Student s1, Student s2) {
         // TODO:
-        return (s1.get_Gr() == s2.get_Gr());
+        return (s1.get_Gr().equals(s2.get_Gr()));
     }
 
     void studentsByGroup() {
         // TODO:
         Map<String,List<Student>> student_by_group = new HashMap<String,List<Student>>();
-        for (Student student : students) {
-            if (student.get_Sid() != "000") {
+        for (int i = 0 ; i < cout; i++) {
+            Student student = students[i];
                 String key = student.get_Gr();
                 if (student_by_group.containsKey(key)) {
                     List<Student> students_has_same_key = student_by_group.get(key);
@@ -29,8 +29,6 @@ public class StudentManagement {
                     students_has_same_key.add(student);
                     student_by_group.put(key, students_has_same_key);
                 }
-            }
-            else break;
         }
         Set<String> list_key = new HashSet<String>();
         list_key = student_by_group.keySet();
@@ -49,14 +47,19 @@ public class StudentManagement {
 
     void removeStudent(String id) {
         // TODO:
+        boolean check = false;
         List<Student> result= new ArrayList<Student>();
         for (int i = 0 ; i < cout; i ++ ){
-            if (students[i].get_Sid() != id) {
+            if (!students[i].get_Sid().equals(id)) {
                 result.add(students[i]);
+
             }
         }
+        if (result.size() != cout ) check = true;
         students = result.toArray(students);
-        cout--;
+        if (check == true) cout--;
+        else
+            System.out.println("Khong ton tai sinh vien ay");
 
     }
 
@@ -66,11 +69,10 @@ public class StudentManagement {
         Student s2 = new Student("Hoang Em Tuan","123","tuan.a.hoang.1999@gmail.com");
         Student s3 = new Student("Tobiichi Origami","12345678","tobiichi@gmail.com");
         Student s4 = new Student("Pham Thi TA","12345","ta@gmail.com");
-        Student s5 = new Student();
-//        s1.set_Gr("K61C-CLC");
-//        s2.set_Gr("K62C-CLC");
-//        s3.set_Gr("K61C-CLC");
-        s3.set_Gr(null);
+        Student s5 = new Student("nguyen van a","1234679","a@gmail.com");
+        s3.set_Gr("K61C-CLC");
+        s4.set_Gr("k62CC");
+        Student s6 = new Student();
         StudentManagement sm = new StudentManagement();
         sm.students[0] = s1;
         sm.cout ++;
@@ -82,12 +84,8 @@ public class StudentManagement {
         sm.cout ++;
         sm.students[4]=s5;
         sm.cout ++;
-//        for (int i = 0 ; i<96;i++) sm.students.add(s5);
-
-//        if (sm.students.size() > 100) {
-//            System.out.println("So svien vuot qua 100");
-//            return ;
-//        }
+        sm.students[5] = s6;
+        sm.cout++;
         System.out.println("Test sameGroup :");
         System.out.println(sm.sameGroup(s1,s2));
         System.out.println(sm.sameGroup(s2,s3));
@@ -97,9 +95,12 @@ public class StudentManagement {
         sm.studentsByGroup();
         System.out.println("Test remove: ");
         sm.removeStudent("16021210");
+
+        System.out.println("Danh sach hien tai la :");
         for (int i = 0 ; i < sm.cout; i ++){
             System.out.println(sm.students[i].getInfo());
-//            System.out.println(sm.students[i]);
+
         }
+
     }
 }
