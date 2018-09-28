@@ -23,7 +23,7 @@ public class Fraction {
         return this;
     }
     public Fraction(){
-        numerator = 1;
+        numerator = 0;
         denominator = 1;
     };
     public Fraction(int numerator, int denominator) {
@@ -67,13 +67,14 @@ public class Fraction {
         temp.numerator = other.denominator;
         return this.multiply(temp);
     }
-    public boolean equals(Fraction other){
+    public boolean equals(Object obj){
+        Fraction other = (Fraction) obj;
         other.rutgon();
         this.rutgon();
         return  ((other.denominator == this.denominator) && (other.numerator == this.numerator));
     }
     public  static  void main(String[] args){
-        Fraction f2 = new Fraction(6,5);
+        Fraction f2 = new Fraction(-6,5);
         Fraction f1 = new Fraction(6,5);
         System.out.println(f1.equals(f2));
         Fraction result = new Fraction();
