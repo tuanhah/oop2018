@@ -1,22 +1,26 @@
 package week4.task2;
 
 public class Shape {
+    //color
     private String color  ;
+    //is filled
     private boolean filled  ;
 
+    //Constructor
     public Shape(){
         color = "red";
         filled = true;
     }
+    //Constructor
     public Shape(String color,boolean filled){
-        color = color;
-        filled = filled;
+        this.color = color;
+        this.filled = filled;
     }
 
-
-    public void setColor(String color) {color = color;}
+    //getter + setter
+    public void setColor(String color) {this.color = color;}
     public String getColor(){return color;}
-    public void setFilled(boolean filled){filled = filled;}
+    public void setFilled(boolean filled){this.filled = filled;}
     public boolean isFilled(){return filled;}
     public String toString(){
         return "color : "+ color + " is filled : " + filled;
