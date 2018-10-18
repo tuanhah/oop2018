@@ -1,8 +1,8 @@
 package week4.task2;
 
 public class Rectangle extends Shape {
-    private double width;
-    private double length;
+    protected double width;
+    protected double length;
     //Constructor
     public Rectangle(){
         width = 1.0;

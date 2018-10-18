@@ -2,8 +2,8 @@ package week4.task1;
 
 public class QuaCam extends HoaQua{
     // khai bao thuoc tinh gia va mau sac
-    private String price;
-    private String color;
+    protected String price;
+    protected String color;
 
     // getter + setter cho tung thuoc tinh
 
@@ -17,7 +17,7 @@ public class QuaCam extends HoaQua{
     public void setColor(String color) {
         this.color = color;
     }
-
+    // 2 phuong thuc
     public void print(){
         System.out.println("day la qua cam");
     }

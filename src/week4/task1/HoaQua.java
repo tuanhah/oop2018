@@ -1,18 +1,18 @@
 package week4.task1;
 
 public class HoaQua{
+    //xuat xu
+    protected String xuatxu;
     //name
-    private String xuatxu;
-    //price
-    private String name;
+    protected String name;
     //set name
-    public void setName(String name){ name = name;}
-    //set price
+    public void setName(String name){ this.name = name;}
+    //set xuatxu
     public void setXuatxu(String xuatxu){this.xuatxu = xuatxu;}
     //get name
     public String getName(){return name;}
-    //get price
-    public String getPrice(){return xuatxu;}
+    //get xuatxu
+    public String getXuatxu(){return xuatxu;}
 
     public void print(){
         System.out.println("day la hoa qua");

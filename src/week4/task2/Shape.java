@@ -2,9 +2,9 @@ package week4.task2;
 
 public class Shape {
     //color
-    private String color  ;
+    protected String color  ;
     //is filled
-    private boolean filled  ;
+    protected boolean filled  ;
 
     //Constructor
     public Shape(){

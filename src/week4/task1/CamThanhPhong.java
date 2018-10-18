@@ -1,6 +1,6 @@
 package week4.task1;
 
-public class CamCaoPhong extends QuaCam{
+public class CamThanhPhong extends QuaCam{
     //huong vi
     private String huongvi;
     //chat luong cua qua cam
@@ -23,8 +23,9 @@ public class CamCaoPhong extends QuaCam{
     public void setHuongvi(String huongvi) {
         this.huongvi = huongvi;
     }
+    //2 phuong thuc
     public void print(){
-        System.out.println("day la qua cam cao phong");
+        System.out.println("day la qua cam thanh phong");
     }
     public void printHuongvi(){
         System.out.println(" huong vi la : " + huongvi);

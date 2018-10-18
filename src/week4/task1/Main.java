@@ -5,7 +5,7 @@ public class Main {
         HoaQua qua1 = new HoaQua();
         QuaCam quaCam = new QuaCam();
         QuaTao quaTao = new QuaTao();
-        CamCaoPhong camCaoPhong = new CamCaoPhong();
+        CamThanhPhong camThanhPhong = new CamThanhPhong();
         CamSanh camSanh = new CamSanh();
         qua1.print();
         qua1.setXuatxu("Ha noi");
@@ -19,9 +19,9 @@ public class Main {
         quaTao.setPrice("123");
         quaTao.printGia();
 
-        camCaoPhong.print();
-        camCaoPhong.setHuongvi("tot");
-        camCaoPhong.printHuongvi();
+        camThanhPhong.print();
+        camThanhPhong.setHuongvi("tot");
+        camThanhPhong.printHuongvi();
 
         camSanh.print();
         camSanh.setHuongvi("kha");
