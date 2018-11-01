@@ -1,14 +1,14 @@
 package week7.task1;
 
-public class Addition extends BinaryExpression {
+public class Substraction extends BinaryExpression {
     private Expression left;
     private Expression right;
 
-    public Addition(Expression left, Expression right) {
+    public Substraction(Expression left, Expression right) {
         this.left = left;
         this.right = right;
     }
-    public Addition(int left, int right) {
+    public Substraction(int left, int right) {
         this.left = new Numeral(left);
         this.right = new Numeral(right);
     }
@@ -25,12 +25,11 @@ public class Addition extends BinaryExpression {
 
     @Override
     public String toString() {
-        return "Addition{" + "left=" + left + ", right=" + right + '}';
+        return "Substraction{" + "left=" + left + ", right=" + right + '}';
     }
 
     @Override
     public int evaluate() {
-        return left.evaluate()+right.evaluate();
+        return left.evaluate()-right.evaluate();
     }
 }
-

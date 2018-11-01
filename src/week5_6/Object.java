@@ -98,7 +98,7 @@ class Circle extends Shape{
         this.radius=radius_;
         this.id="Circle"+l1.countIdCircle;
         this.distinct ="Circle" + this.center.getX() + "," + this.center.getY() + "," + this.getRadius();
-        l1.listShape.add(this.id);
+        l1.listShape.add(this);
         //super.lCircle.listShape.add(this.id);
         l1.listDistinct.add(this.distinct);
         l1.countIdCircle++;
@@ -142,7 +142,7 @@ class Rectangle extends Shape{
 
         this.distinct="Rectangle"+this.top.getX()+","+this.top.getY()+","+this.width+","+this.length;
         l1.countIdRectangle++;
-        l1.listShape.add(this.id);
+        l1.listShape.add(this);
         l1.listDistinct.add(this.distinct);
     }
 
@@ -187,7 +187,7 @@ class Square extends Shape{
         this.id="Square"+l1.countIdSquare;
         this.distinct="Square"+this.topLeft.getX()+","+this.topLeft.getY()+","+this.Side;
         l1.countIdSquare++;
-        l1.listShape.add(this.id);
+        l1.listShape.add(this);
         //super.lSquare.listShape.add(this.id);
         l1.listDistinct.add(this.distinct);
     }
@@ -227,7 +227,8 @@ class Tringle extends Shape{
         this.id="Tringle"+l1.countIdTringle;
         this.distinct="Tringle"+ center.getX()+","+center.getY()+A.getX()+A.getY();
         l1.countIdTringle++;
-        l1.listShape.add(this.id);
+        l1.listShape.add(this);
+        l1.listDistinct.add(this.distinct);
         //super.lTringle.listShape.add(this.id);
     }
 
@@ -270,7 +271,7 @@ class Hexagon extends Shape{
         this.id="Hexagon"+l1.countIdHexagon;
         this.distinct="Hexagon"+this.topLeft.getX()+","+this.topLeft.getY()+","+this.Side;
         l1.countIdHexagon++;
-        l1.listShape.add(this.id);
+        l1.listShape.add(this);
         //super.lSquare.listShape.add(this.id);
         l1.listDistinct.add(this.distinct);
     }

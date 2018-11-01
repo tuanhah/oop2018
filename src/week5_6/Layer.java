@@ -19,7 +19,7 @@ class Layer {
     //biến lưu số hình lục giác trong Layer
     protected int countIdHexagon=0;
     //danh sách lưu số hình trong 1 layer
-    protected ArrayList<String> listShape = new ArrayList<String>();
+    protected ArrayList<Shape> listShape = new ArrayList<Shape>();
 
     //danh sách lưu thông số các hình để phân biệt
     protected ArrayList<String> listDistinct = new ArrayList<String>();
@@ -37,18 +37,22 @@ class Layer {
 
     //Xóa hình tam giác trong Layer
     public void deleteTringle(){
-        for(int i=0;i<this.listShape.size();i++){
-            if(this.listShape.get(i).contains("Tringle")==true){
-                this.listShape.remove(i);
+        for(int i=0;i<this.listDistinct.size();i++){
+            Shape shape = this.listShape.get(i);
+            if(this.listDistinct.get(i).contains("Tringle")==true){
+                this.listShape.remove(shape);
+                this.listDistinct.remove(this.listDistinct.get(i));
                 i--;
             }
         }
     }
 
     public void deleteCircle(){
-        for(int i=0;i<this.listShape.size();i++){
-            if(this.listShape.get(i).contains("Circle")==true){
-                this.listShape.remove(i);
+        for(int i=0;i<this.listDistinct.size();i++){
+            Shape shape = this.listShape.get(i);
+            if(this.listDistinct.get(i).contains("Circle")==true){
+                this.listShape.remove(shape);
+                this.listDistinct.remove(this.listDistinct.get(i));
                 i--;
             }
         }
@@ -57,7 +61,7 @@ class Layer {
     //Vẽ hình trong Layer
     public void drawShape(){
 
-        for(String temp : this.listShape){
+        for(String temp : this.listDistinct){
             System.out.println(temp);
 
         }

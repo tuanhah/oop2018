@@ -37,6 +37,9 @@ public class Main {
 
 //        d1.Category();
 
+        d1.deleteCircle();
+//        l5.deleteTringle();
+
         d1.deleteSame();
         //Vẽ hình trong Diagram
 //        d1.deleteCircle();
