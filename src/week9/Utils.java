@@ -9,10 +9,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class Utils {
+
+
+
+
     public static void main(String[] args) {
+        /*aduasdhsda*/
 
-
-        //Test Find File
         String path = "/home/tuan/Desktop/Workspace/OOP/oop2018/src/week9/test.txt";
         String fileName = "test3.txt";
         String folderPath = "/home/tuan/Desktop/Workspace/OOP/oop2018/src/week9/";
@@ -21,7 +24,7 @@ public class Utils {
         System.out.println(findFileByName(folderPath,fileName));
     }
 
-    public static File findFileByName(String folderPath, String fileName) {
+    public static File findFileByName(String folderPath,String fileName) {
         try {
             File file = new File(folderPath);
             File[] list_file = file.listFiles();
@@ -89,6 +92,10 @@ public class Utils {
         catch (IOException e) {
             System.out.println("Error : "+ e.toString());
         }
+    }
+
+    public void chelsea(String a){
+        int b = 10;
     }
 
 }
